@@ -85,3 +85,44 @@ function makeChange({price, amountGiven}) {
  return coins
 
 }
+
+export default function makeChange({price, amountGiven}) { 
+ 
+  const coins = {
+  quarters: 0,
+  dimes: 0,
+  nickels: 0,
+  pennies: 0,
+  }
+ 
+ let difference = amountGiven - price 
+ 
+ let quarterValue = 25,
+ let dimeValue = 10,
+ let pennyValue = 1,
+ let nickelValue = 5,
+
+ 
+ let numberOfNickels = Math.floor(difference / nickelValue )
+let numberOfPennies = Math.floor(difference / pennyValue )
+let numberOfDimes = Math.floor(difference / dimeValue )
+let numberOfQuarters = Math.floor(difference / quarterValue )
+
+
+ 
+ let numberOfPennies = difference
+ let numberOfNickels = difference
+ let numberOfDimes = difference
+ let numberOfQuarters = difference
+
+ 
+ coins.nickels = numberOfNickels
+ coins.pennies = numberOfPennies
+ coins.dimes = numberOfDimes
+ coins.quarters = numberOfQuarters
+
+
+ 
+ return coins
+
+}
